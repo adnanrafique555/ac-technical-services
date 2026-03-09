@@ -375,23 +375,23 @@
             </div>
 
             <div class="glass-card p-8 md:p-12 rounded-2xl shadow-xl">
-                <form id="booking-form" class="space-y-6">
-                    <!-- Name Field -->
+                <form id="booking-form" action="https://formspree.io/f/mpqyqynk" method="POST" class="space-y-6">
+                    <input type="hidden" name="_subject" value="New AC Service Booking Request">
                     <div>
                         <label class="block text-lg font-semibold text-gray-900 mb-2">Full Name</label>
-                        <input type="text" required placeholder="Enter your full name" class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900 placeholder-gray-400">
+                       <input type="text" name="name" required placeholder="Enter your full name" class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900 placeholder-gray-400">
                     </div>
 
                     <!-- Phone Field -->
                     <div>
                         <label class="block text-lg font-semibold text-gray-900 mb-2">Phone Number</label>
-                        <input type="tel" required placeholder="056-XXXXXXX" class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900 placeholder-gray-400">
+                        <input type="tel" name="phone" required placeholder="+971 56 757 1868" class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900 placeholder-gray-400">
                     </div>
 
                     <!-- Service Type Field -->
                     <div>
                         <label class="block text-lg font-semibold text-gray-900 mb-2">Service Type</label>
-                        <select required class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900">
+                        <select name="service" required class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900">
                             <option value="">Select a service</option>
                             <option value="ac-repair">AC Installation & Repair</option>
                             <option value="ac-maintenance">AC Maintenance</option>
@@ -405,7 +405,7 @@
                     <!-- Message Field -->
                     <div>
                         <label class="block text-lg font-semibold text-gray-900 mb-2">Additional Details</label>
-                        <textarea required placeholder="Describe your service requirement..." rows="4" class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 resize-none"></textarea>
+                      <textarea name="message" required placeholder="Describe your service requirement..." rows="4" class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 resize-none"></textarea>
                     </div>
 
                     <!-- Submit Button -->
