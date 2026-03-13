@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://actech-services.netlify.app/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- AC Repair Dubai -->
+  <url>
+    <loc>https://actech-services.netlify.app/ac-repair-dubai.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- AC Maintenance Dubai -->
+  <url>
+    <loc>https://actech-services.netlify.app/ac-maintenance-dubai.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- AC Installation UAE -->
+  <url>
+    <loc>https://actech-services.netlify.app/ac-installation-uae.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- AC Repair Sharjah -->
+  <url>
+    <loc>https://actech-services.netlify.app/ac-repair-sharjah.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AC Repair Ajman -->
+  <url>
+    <loc>https://actech-services.netlify.app/ac-repair-ajman.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
