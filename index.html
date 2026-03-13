@@ -1,1 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional AC repair, AC installation and AC maintenance services in Dubai, Abu Dhabi, Sharjah and across UAE. Fast, reliable and affordable AC Technical Services. Call +971 56 757 1868.">
+    <meta name="keywords" content="AC repair Dubai, AC maintenance Dubai, AC service UAE, AC repair UAE, HVAC services Dubai, split AC repair Dubai, central AC maintenance UAE, emergency AC repair Dubai, AC installation Dubai, AC gas refill UAE, AC cleaning Dubai, AC technician UAE, air conditioning repair Dubai, AC repair Abu Dhabi, AC repair Sharjah, AC repair Ajman, AC duct cleaning UAE">
+    <meta name="geo.region" content="AE-DU">
+    <meta name="geo.placename" content="Dubai, United Arab Emirates">
+    <meta name="geo.position" content="25.2048;55.2708">
+    <meta name="ICBM" content="25.2048, 55.2708">
+    <meta property="og:title" content="AC Repair & Maintenance Services in Dubai | AC Technical Services UAE">
+    <meta property="og:description" content="Professional AC repair, maintenance and air conditioning services in Dubai, Sharjah & UAE. Fast response. Call +971 56 757 1868">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://actech-services.netlify.app">
+    <meta property="og:locale" content="en_AE">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="AC Technical Services UAE">
+    <link rel="canonical" href="https://actech-services.netlify.app">
+    <title>AC Repair Services in Dubai | AC Technical Services UAE | 24/7 AC Maintenance</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "AC Technical Services UAE",
+      "description": "Professional AC repair, maintenance and air conditioning services in Dubai, Sharjah, and across UAE.",
+      "url": "https://actech-services.netlify.app",
+      "telephone": "+971567571868",
+      "priceRange": "$$",
+      "image": "https://actech-services.netlify.app/og-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AE",
+        "addressRegion": "Dubai"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.2048,
+        "longitude": 55.2708
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Dubai"},
+        {"@type": "City", "name": "Abu Dhabi"},
+        {"@type": "City", "name": "Sharjah"},
+        {"@type": "City", "name": "Ajman"},
+        {"@type": "City", "name": "Ras Al Khaimah"},
+        {"@type": "City", "name": "Al Ain"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AC Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Repair Dubai"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Maintenance UAE"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Installation Dubai"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Gas Refill UAE"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Duct Cleaning Dubai"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Washing Machine Repair Dubai"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Refrigerator Repair UAE"}}
+        ]
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://wa.me/971567571868"
+      ]
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Glass Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
 
+        /* Blob Animation */
+        @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+
+        /* Float Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+
+        /* Orbit Animations */
+        @keyframes orbit1 {
+            0%, 100% { transform: translate(-50%, -8px) rotate(0deg) translateX(80px) rotate(0deg); }
+            50% { transform: translate(-50%, -8px) rotate(180deg) translateX(80px) rotate(-180deg); }
+        }
+        @keyframes orbit2 {
+            0%, 100% { transform: rotate(120deg) translateX(90px) rotate(-120deg); }
+            50% { transform: rotate(300deg) translateX(90px) rotate(-300deg); }
+        }
+        @keyframes orbit3 {
+            0%, 100% { transform: rotate(240deg) translateX(90px) rotate(-240deg); }
+            50% { transform: rotate(60deg) translateX(90px) rotate(-60deg); }
+        }
+        .animate-orbit-1 { animation: orbit1 6s ease-in-out infinite; }
+        .animate-orbit-2 { animation: orbit2 8s ease-in-out infinite; }
+        .animate-orbit-3 { animation: orbit3 10s ease-in-out infinite; }
+
+        /* Fade In Up */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+
+        /* Service Card hover */
+        .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .service-card:hover { transform: translateY(-6px); }
+
+        /* Feature block hover */
+        .feature-block { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+        /* Floating buttons */
+        .floating-btn { position: relative; }
+
+        /* Nav link underline effect */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #2563eb, #ef4444);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 text-gray-900">
+    <!-- Sticky Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-lg z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-600 via-red-500 to-blue-700 rounded-lg flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-snowflake text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">AC Tech</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">About</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Services</a>
+                    <a href="#service-areas" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Service Areas</a>
+                    <a href="#booking" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Book Service</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Contact</a>
+                </div>
+
+                <!-- Call Now Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:+971567571868" class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105 flex items-center space-x-2">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Now</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors duration-300">
+                    <i class="fas fa-bars text-2xl text-blue-600"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 right-0 bg-white shadow-lg rounded-b-2xl">
+                <div class="flex flex-col space-y-4 p-6">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">About</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Services</a>
+                    <a href="#booking" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Book Service</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">Contact</a>
+                    <a href="tel:+971567571868" class="bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-2.5 rounded-lg font-semibold text-center transition-all duration-300 hover:shadow-lg flex items-center justify-center space-x-2">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-red-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-0 left-1/2 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div class="space-y-4 animate-fadeInUp">
+                        <h1 class="text-5xl md:text-6xl font-bold">
+                            <span class="bg-gradient-to-r from-blue-600 via-red-500 to-blue-700 bg-clip-text text-transparent">AC Repair & Maintenance</span>
+                            <span class="block text-gray-900">Services in UAE</span>
+                        </h1>
+                        <p class="text-2xl text-gray-600 font-semibold">Dubai · Abu Dhabi · Sharjah · Ajman · 24/7 Service</p>
+                        <p class="text-lg text-gray-600 leading-relaxed">AC Technical Services provides professional air conditioning repair, installation and maintenance services across the UAE including Dubai, Abu Dhabi, Sharjah, Ajman and Al Ain. Our certified technicians deliver fast and reliable HVAC solutions for residential and commercial AC systems.</p>
+                        <p class="text-2xl text-gray-600 font-semibold">Expert AC Installation, Repair & Maintenance Across the UAE</p>
+                        <p class="text-lg text-gray-600 leading-relaxed">Reliable technical solutions for air conditioners and home appliances across Dubai, Abu Dhabi, Sharjah & beyond. Professional service you can trust.</p>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="tel:+971567571868" class="group bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-2">
+                            <i class="fas fa-phone group-hover:animate-pulse"></i>
+                            <span>Call Now</span>
+                        </a>
+                        <a href="https://wa.me/971567571868" target="_blank" rel="noopener noreferrer" class="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-2">
+                            <i class="fab fa-whatsapp group-hover:animate-pulse"></i>
+                            <span>WhatsApp Chat</span>
+                        </a>
+                        <a href="#booking" class="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-2">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Book Service</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Animated Icons -->
+                <div class="hidden md:block relative h-96">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="relative w-full h-full">
+                            <!-- Central Icon -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-2xl animate-float">
+                                    <i class="fas fa-snowflake text-white text-6xl"></i>
+                                </div>
+                            </div>
+
+                            <!-- Orbiting Icons -->
+                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 animate-orbit-1">
+                                <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-tools text-white text-3xl"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-0 left-0 animate-orbit-2">
+                                <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-fan text-white text-3xl"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-0 right-0 animate-orbit-3">
+                                <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-thermometer-half text-white text-3xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About AC Technical Services</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-red-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">AC Technical Services provides professional air conditioning repair, installation and maintenance services across the UAE including Dubai, Abu Dhabi, Sharjah, Ajman and Al Ain. Our certified technicians deliver fast and reliable HVAC solutions for residential and commercial AC systems throughout the Emirates.</p>
+                    <p class="text-lg text-gray-700 leading-relaxed">With years of experience in HVAC services, we specialize in split AC repair, central AC maintenance, AC gas refill, AC cleaning, and emergency AC repair services across UAE. Our goal is to keep your home or office cool and comfortable all year round — at prices that are fair and transparent with no hidden charges.</p>
+                    
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-600">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Expert Technicians</h3>
+                                <p class="mt-2 text-gray-600">Certified professionals with extensive training and experience</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-600">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Quality Service</h3>
+                                <p class="mt-2 text-gray-600">We use only premium parts and follow industry best practices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center space-y-2 hover:scale-110 transition-transform duration-300">
+                                <div class="text-4xl font-bold text-blue-600">500+</div>
+                                <p class="text-gray-600 font-semibold">Happy Customers</p>
+                            </div>
+                            <div class="text-center space-y-2 hover:scale-110 transition-transform duration-300">
+                                <div class="text-4xl font-bold text-red-600">1000+</div>
+                                <p class="text-gray-600 font-semibold">Services Completed</p>
+                            </div>
+                            <div class="text-center space-y-2 hover:scale-110 transition-transform duration-300">
+                                <div class="text-4xl font-bold text-blue-600">10+</div>
+                                <p class="text-gray-600 font-semibold">Years Experience</p>
+                            </div>
+                            <div class="text-center space-y-2 hover:scale-110 transition-transform duration-300">
+                                <div class="text-4xl font-bold text-red-600">24/7</div>
+                                <p class="text-gray-600 font-semibold">Support Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our AC Services in UAE</h2>
+                <p class="text-xl text-gray-600">Professional HVAC services for residential and commercial properties across Dubai, Abu Dhabi, Sharjah & all UAE emirates</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-red-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-500 group cursor-pointer">
+                    <div class="mb-6 relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">AC Installation & Repair Dubai UAE</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">We provide fast and professional AC repair services in Dubai and across UAE. Our technicians diagnose and fix all AC problems including cooling issues, compressor failure, gas leakage, thermostat problems and electrical faults. We work with all major brands including Samsung, LG, Daikin, Gree, Carrier, and Midea. Whether your AC is not cooling, making unusual noises, leaking water, or completely not turning on, our certified team will fix it right the first time with a service guarantee.</p>
+                    <ul class="space-y-1 text-sm text-gray-500">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Split, window & central AC units</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>All brands serviced</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Same-day repair available</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Guaranteed workmanship</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-500 group cursor-pointer">
+                    <div class="mb-6 relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-fan"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">AC Maintenance Dubai & UAE</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Regular AC maintenance improves performance and reduces electricity consumption across UAE. Our comprehensive AC maintenance service includes deep cleaning of filters and coils, checking refrigerant gas pressure, inspecting electrical connections, clearing drain pipes, and full system inspection. We offer flexible annual maintenance contracts for both residential and commercial properties in Dubai, Abu Dhabi, Sharjah and surrounding areas. A well-maintained AC runs efficiently, lasts longer, and keeps bills lower.</p>
+                    <ul class="space-y-1 text-sm text-gray-500">
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Deep filter & coil cleaning</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Refrigerant level check</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Annual maintenance contracts</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Residential & commercial</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-500 group cursor-pointer">
+                    <div class="mb-6 relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Washing Machine Repair</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Is your washing machine not spinning, not draining, leaking water, or showing an error code? Our skilled technicians repair all types of washing machines — front-load and top-load — across all popular brands including Samsung, LG, Bosch, Whirlpool, and Panasonic. We carry a wide range of genuine spare parts to ensure fast turnaround on most repairs. Our team provides a thorough diagnosis, transparent pricing before any work begins, and a warranty on all replaced parts.</p>
+                    <ul class="space-y-1 text-sm text-gray-500">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Front-load & top-load machines</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>All major brands covered</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Genuine spare parts used</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Warranty on all repairs</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-500 group cursor-pointer">
+                    <div class="mb-6 relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-ice-cream"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Refrigerator & Freezer Service</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">A faulty refrigerator can lead to spoiled food and costly losses. Our technicians are highly experienced in diagnosing and repairing all refrigerator and freezer issues — including not cooling, compressor failure, ice maker problems, water leaks, excessive noise, and faulty thermostats. We service all brands and models including LG, Samsung, Hitachi, Haier, and Whirlpool. With quick response times across the UAE and genuine replacement parts, we'll have your fridge running perfectly again in no time.</p>
+                    <ul class="space-y-1 text-sm text-gray-500">
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Compressor & gas refill</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Thermostat & sensor repair</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Ice maker & water dispenser fix</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>All fridge brands covered</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-500 group cursor-pointer">
+                    <div class="mb-6 relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Electrical & Lighting</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Our licensed electricians provide a full range of residential and commercial electrical services across the UAE. From fixing tripped breakers and faulty sockets to complete rewiring projects and LED lighting installations, we handle it all safely and efficiently. We also specialise in installing outdoor lighting, smart home wiring, ceiling fan fitting, and distribution board upgrades. All electrical work is carried out in full compliance with UAE safety regulations to ensure your home and family are protected.</p>
+                    <ul class="space-y-1 text-sm text-gray-500">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Wiring & socket repairs</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>LED & outdoor lighting</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Distribution board upgrades</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>UAE safety code compliant</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="service-card glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-500 group cursor-pointer">
+                    <div class="mb-6 relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center text-white text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-droplet"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Plumbing & Fixtures</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">From dripping taps to burst pipes and blocked drains, our experienced plumbers are ready to respond quickly across Dubai, Sharjah, and the wider UAE. We handle kitchen and bathroom plumbing repairs, toilet replacements, shower installations, water heater servicing, and full fixture upgrades. Whether it's a minor leak fix or a complete bathroom plumbing overhaul, we deliver clean, professional results with minimal disruption to your home. We use quality materials and fittings to ensure durability and long-lasting performance.</p>
+                    <ul class="space-y-1 text-sm text-gray-500">
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Leak detection & pipe repair</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Toilet & shower installation</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Water heater servicing</li>
+                        <li><i class="fas fa-check text-red-500 mr-2"></i>Blocked drain clearing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-red-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose AC Technical Services</h2>
+                <p class="text-xl text-gray-600">The most trusted HVAC services provider across Dubai, Abu Dhabi, Sharjah & UAE</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-red-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-block glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                    <div class="mb-6 flex justify-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center text-white text-4xl shadow-lg animate-bounce">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Experienced AC Technicians</h3>
+                    <p class="text-gray-600 leading-relaxed">Our certified HVAC technicians have 10+ years of experience in AC repair and maintenance services across Dubai and UAE.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-block glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                    <div class="mb-6 flex justify-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center text-white text-4xl shadow-lg animate-bounce" style="animation-delay: 0.2s;">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Fast Same-Day AC Service</h3>
+                    <p class="text-gray-600 leading-relaxed">We respond quickly to emergency AC repair calls across UAE and prioritize customer needs with same-day service delivery in Dubai, Sharjah & Ajman.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-block glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                    <div class="mb-6 flex justify-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center text-white text-4xl shadow-lg animate-bounce" style="animation-delay: 0.4s;">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Affordable HVAC Pricing UAE</h3>
+                    <p class="text-gray-600 leading-relaxed">Transparent pricing with no hidden charges. We offer the most competitive rates for AC repair, maintenance and installation services across the UAE.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-block glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                    <div class="mb-6 flex justify-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-600 to-red-700 rounded-2xl flex items-center justify-center text-white text-4xl shadow-lg animate-bounce" style="animation-delay: 0.6s;">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Customer Satisfaction</h3>
+                    <p class="text-gray-600 leading-relaxed">500+ satisfied customers with 100% satisfaction guarantee on all our technical services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UAE Service Areas & Map Section -->
+    <section id="service-areas" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">AC Services Across UAE</h2>
+                <p class="text-xl text-gray-600">Our AC technicians are available for same-day AC repair services across all UAE emirates</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-red-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Service Area Tags -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold text-gray-900">Our AC Service Locations in UAE</h3>
+                    <p class="text-gray-600 leading-relaxed">We provide professional AC repair, AC maintenance and AC installation services across all UAE emirates. Our certified AC technicians are available for same-day HVAC service whether you're in central Dubai or anywhere across the Emirates.</p>
+
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Dubai</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Abu Dhabi</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Sharjah</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Ajman</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Ras Al Khaimah</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Al Ain</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Umm Al Quwain</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Deira</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Bur Dubai</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Al Nahda</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Al Quoz</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Jumeirah</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Mirdif</span>
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default">📍 Al Barsha</span>
+                        <span class="bg-red-100 text-red-600 px-4 py-2 rounded-full font-semibold text-sm hover:bg-red-600 hover:text-white transition-all duration-300 cursor-default">+ All UAE Areas</span>
+                    </div>
+
+                    <!-- UAE Keywords for SEO (visually styled) -->
+                    <div class="glass-card p-6 rounded-2xl space-y-3">
+                        <h4 class="font-bold text-gray-900 text-lg">Why Choose AC Technical Services UAE?</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-600"></i><span>✔ Experienced AC technicians — 10+ years in HVAC services</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-600"></i><span>✔ Fast same-day AC repair service across UAE</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-600"></i><span>✔ Affordable pricing with no hidden charges</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-600"></i><span>✔ 24/7 emergency AC repair in Dubai, Sharjah & Ajman</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-600"></i><span>✔ All AC brands — Samsung, LG, Daikin, Gree, Midea, Carrier</span></li>
+                            <li class="flex items-center space-x-2"><i class="fas fa-check-circle text-blue-600"></i><span>✔ Service across the entire UAE — Dubai to Al Ain</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Booking Section -->
+
+    <!-- Detailed SEO Content Section -->
+    <section id="ac-repair-dubai" class="py-20 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">AC Repair Services in Dubai & UAE</h2>
+                <p class="text-xl text-gray-600">Trusted by 500+ customers across Dubai, Sharjah, Abu Dhabi & all UAE emirates</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-red-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Split AC Repair -->
+                <div class="glass-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Split AC Repair Dubai</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">We repair all split AC problems in Dubai including no cooling, water leaking, compressor failure, gas leaks and remote control issues. Our technicians arrive the same day with all tools and spare parts needed to fix your split AC on the spot.</p>
+                </div>
+
+                <!-- Central AC Repair -->
+                <div class="glass-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Central AC Repair UAE</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">Expert central air conditioning repair and maintenance for villas, apartments, and commercial buildings across UAE. We handle chiller units, FCUs, AHUs, and full ducted AC systems with guaranteed professional results.</p>
+                </div>
+
+                <!-- AC Gas Refill -->
+                <div class="glass-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg">
+                        <i class="fas fa-fill-drip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AC Gas Refill Dubai</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">Is your AC running but not cooling properly? You may need an AC gas refill. We provide professional refrigerant recharging (R22, R32, R410A) for all AC brands across Dubai and UAE at competitive prices with no hidden charges.</p>
+                </div>
+
+                <!-- AC Duct Cleaning -->
+                <div class="glass-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AC Duct Cleaning UAE</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">Dirty AC ducts can cause allergies, bad odours, and poor air quality in your home. Our professional AC duct cleaning service in UAE removes dust, mold, and bacteria from your entire duct system, improving air quality and AC efficiency.</p>
+                </div>
+
+                <!-- AC Installation -->
+                <div class="glass-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AC Installation Dubai</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">Professional AC installation services in Dubai for split, cassette, window, and ducted systems. We handle complete installation from bracket fitting and pipe running to electrical connection and final testing — all in one visit.</p>
+                </div>
+
+                <!-- Emergency AC Repair -->
+                <div class="glass-card p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
+                    <div class="w-14 h-14 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Emergency AC Repair UAE</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">AC breakdown in the UAE heat? Don't wait — call us now. We offer 24/7 emergency AC repair across Dubai, Sharjah, Ajman and Abu Dhabi. Our on-call technicians respond fast to get your AC working again the same day, day or night.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Section for SEO -->
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">How much does AC repair cost in Dubai?</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">AC repair costs in Dubai vary depending on the problem. Simple fixes like filter cleaning or sensor replacement start from AED 80–150. Gas refills typically cost AED 150–300. Compressor replacement is more expensive. We always give you a clear price before starting any work — no hidden charges.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">How often should I service my AC in UAE?</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">In the UAE's dusty and hot climate, we recommend servicing your AC every 3–4 months. At minimum, get a full AC maintenance service once a year before summer. Regular servicing keeps your AC running efficiently, lowers electricity bills, and prevents costly breakdowns.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Do you repair all AC brands in UAE?</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Yes — we service and repair all major AC brands available in the UAE including Samsung, LG, Daikin, Carrier, Gree, Midea, Hitachi, Panasonic, Toshiba, Haier, and more. Our technicians are trained on all brands and carry a wide stock of genuine spare parts.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Do you offer same-day AC repair in Dubai?</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Yes! We offer same-day AC repair service across Dubai and the UAE. Just call us or WhatsApp us at +971 56 757 1868 and we'll dispatch a technician to your location as quickly as possible. For emergencies, we're available 24/7.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-20 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Book AC Service Today</h2>
+                <p class="text-xl text-gray-600">Need fast AC repair? Contact AC Technical Services for professional HVAC services anywhere in the UAE</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-red-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="glass-card p-8 md:p-12 rounded-2xl shadow-xl">
+                <form id="booking-form" class="space-y-6">
+                    <!-- Name Field -->
+                    <div>
+                        <label class="block text-lg font-semibold text-gray-900 mb-2">Full Name</label>
+                        <input type="text" required placeholder="Enter your full name" class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900 placeholder-gray-400">
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div>
+                        <label class="block text-lg font-semibold text-gray-900 mb-2">Phone Number</label>
+                        <input type="tel" required placeholder="056-XXXXXXX" class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900 placeholder-gray-400">
+                    </div>
+
+                    <!-- Service Type Field -->
+                    <div>
+                        <label class="block text-lg font-semibold text-gray-900 mb-2">Service Type</label>
+                        <select required class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900">
+                            <option value="">Select a service</option>
+                            <option value="ac-repair">AC Installation & Repair</option>
+                            <option value="ac-maintenance">AC Maintenance</option>
+                            <option value="washing-machine">Washing Machine Repair</option>
+                            <option value="refrigerator">Refrigerator & Freezer Service</option>
+                            <option value="electrical">Electrical & Lighting</option>
+                            <option value="plumbing">Plumbing & Fixtures</option>
+                        </select>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div>
+                        <label class="block text-lg font-semibold text-gray-900 mb-2">Additional Details</label>
+                        <textarea required placeholder="Describe your service requirement..." rows="4" class="w-full px-6 py-3 rounded-lg bg-white/50 backdrop-blur-sm border-2 border-gray-200 focus:border-blue-600 focus:outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 resize-none"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:shadow-xl transform hover:scale-105 flex items-center justify-center space-x-2">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Book Service Now</span>
+                    </button>
+
+                    <p class="text-center text-gray-600 text-sm">We'll contact you shortly to confirm your appointment</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-900 via-blue-800 to-red-900 relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full mix-blend-screen filter blur-3xl animate-blob"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-2000"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Get In Touch — AC Repair UAE</h2>
+                <p class="text-xl text-blue-100">📞 Phone / WhatsApp: +971 56 757 1868 — Available 24/7 across UAE</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-300 to-red-400 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="glass-card-light p-8 rounded-2xl backdrop-blur-md border border-white/20">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-lg">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white mb-2">Phone</h3>
+                                <p class="text-blue-100 text-lg">+971 56 757 1868</p>
+                                <a href="tel:+971567571868" class="inline-block mt-4 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
+                                    Call Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card-light p-8 rounded-2xl backdrop-blur-md border border-white/20">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-lg">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white mb-2">WhatsApp</h3>
+                                <p class="text-blue-100 text-lg">+971 56 757 1868</p>
+                                <a href="https://wa.me/971567571868" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
+                                    Chat Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="space-y-8">
+                    <div class="glass-card-light p-8 rounded-2xl backdrop-blur-md border border-white/20 text-center">
+                        <div class="inline-block w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center text-white text-2xl mb-4 shadow-lg">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">24/7 Support</h3>
+                        <p class="text-blue-100">Available for emergency service calls anytime</p>
+                    </div>
+
+                    <div class="glass-card-light p-8 rounded-2xl backdrop-blur-md border border-white/20 text-center">
+                        <div class="inline-block w-16 h-16 bg-gradient-to-br from-red-400 to-red-500 rounded-xl flex items-center justify-center text-white text-2xl mb-4 shadow-lg">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Expert Support</h3>
+                        <p class="text-blue-100">Speak with experienced technicians directly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-8 right-8 flex flex-col items-end space-y-4 z-40">
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/971567571868" target="_blank" rel="noopener noreferrer" class="floating-btn group bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+            <span class="absolute right-20 bg-green-600 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Chat on WhatsApp</span>
+        </a>
+
+        <!-- Call Button -->
+        <a href="tel:+971567571868" class="floating-btn group bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110">
+            <i class="fas fa-phone text-2xl"></i>
+            <span class="absolute right-20 bg-red-600 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">Call Now</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 via-red-500 to-blue-700 rounded-lg flex items-center justify-center shadow-lg">
+                            <i class="fas fa-snowflake text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-red-400 bg-clip-text text-transparent">AC Tech</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">Professional AC repair and technical services for homes and offices across Dubai, Abu Dhabi, Sharjah & the UAE.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-blue-400 transition-colors duration-300">Home</a></li>
+                        <li><a href="index.html#about" class="hover:text-blue-400 transition-colors duration-300">About</a></li>
+                        <li><a href="index.html#services" class="hover:text-blue-400 transition-colors duration-300">Services</a></li>
+                        <li><a href="index.html#booking" class="hover:text-blue-400 transition-colors duration-300">Book Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Service Pages -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Service Pages</h4>
+                    <ul class="space-y-2">
+                        <li><a href="ac-repair-dubai.html" class="hover:text-blue-400 transition-colors duration-300">AC Repair Dubai</a></li>
+                        <li><a href="ac-maintenance-dubai.html" class="hover:text-blue-400 transition-colors duration-300">AC Maintenance Dubai</a></li>
+                        <li><a href="ac-installation-uae.html" class="hover:text-blue-400 transition-colors duration-300">AC Installation UAE</a></li>
+                        <li><a href="ac-repair-sharjah.html" class="hover:text-blue-400 transition-colors duration-300">AC Repair Sharjah</a></li>
+                        <li><a href="ac-repair-ajman.html" class="hover:text-blue-400 transition-colors duration-300">AC Repair Ajman</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors duration-300">AC Repair</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors duration-300">Maintenance</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors duration-300">Washing Machine</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors duration-300">Refrigerator</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-red-500"></i>
+                            <a href="tel:+971567571868" class="hover:text-blue-400 transition-colors duration-300">+971 56 757 1868</a>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fab fa-whatsapp text-green-500"></i>
+                            <a href="https://wa.me/971567571868" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors duration-300">WhatsApp Chat</a>
+                        </li>
+                        <li class="text-sm mt-4">
+                            <span class="text-blue-400">24/7 Emergency Service Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-700 pt-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <p class="text-sm text-gray-400">
+                        &copy; 2026 AC Technical Services UAE. All rights reserved. Professional AC Repair & Maintenance in Dubai, Abu Dhabi, Sharjah
+                    </p>
+                    <div class="flex space-x-6 md:justify-end">
+                        <a href="https://wa.me/971567571868" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors duration-300">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                        <a href="tel:+971567571868" class="hover:text-red-400 transition-colors duration-300">
+                            <i class="fas fa-phone text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu .nav-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-xl');
+                navbar.classList.remove('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-xl');
+                navbar.classList.add('shadow-lg');
+            }
+        });
+
+        // Booking form submission
+        const bookingForm = document.getElementById('booking-form');
+        bookingForm?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = bookingForm.querySelector('button[type="submit"]');
+            btn.innerHTML = '<i class="fas fa-check"></i><span> Booking Confirmed!</span>';
+            btn.classList.add('from-green-600', 'to-green-700');
+            btn.classList.remove('from-blue-600', 'to-blue-700');
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i><span> Book Service Now</span>';
+                btn.classList.remove('from-green-600', 'to-green-700');
+                btn.classList.add('from-blue-600', 'to-blue-700');
+                bookingForm.reset();
+            }, 3000);
+        });
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
