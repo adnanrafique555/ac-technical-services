@@ -191,7 +191,7 @@ input,select,textarea{font-family:var(--font-b)}
 /* Services Grid */
 .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
 .svc-card{background:#fff;border-radius:var(--radius-lg);padding:32px;border:1px solid var(--gray-200);transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease);position:relative;overflow:hidden}
-.svc-card::after{content:'';position:absolute;inset:0;border-radius:var(--radius-lg);border:2px solid transparent;transition:border-color var(--t) var(--ease)}
+.svc-card::after{content:'';position:absolute;inset:0;border-radius:var(--radius-lg);border:2px solid transparent;transition:border-color var(--t) var(--ease);pointer-events:none}
 .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 .svc-card:hover::after{border-color:var(--gray-200)}
 .svc-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px;background:var(--blue-light);color:var(--blue);transition:var(--t) var(--ease)}
