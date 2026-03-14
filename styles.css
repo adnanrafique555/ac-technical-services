@@ -963,6 +963,19 @@ input:focus, select:focus, textarea:focus {
 }
 textarea { resize: vertical; }
 
+.form-wa-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--gray-400);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+input.error, select.error { border-color: var(--red) !important; }
+
 /* ===== FOOTER ===== */
 .footer { background: var(--navy); }
 .footer-main { padding: 70px 0 40px; }

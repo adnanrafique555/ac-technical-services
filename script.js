@@ -139,25 +139,49 @@ const submitBtn = document.getElementById('submitBtn');
 contactForm?.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // Basic validation
-  const name = document.getElementById('name').value.trim();
-  const phone = document.getElementById('phone').value.trim();
+  const name     = document.getElementById('name').value.trim();
+  const phone    = document.getElementById('phone').value.trim();
+  const emirate  = document.getElementById('emirate').value;
+  const service  = document.getElementById('service').value;
+  const message  = document.getElementById('message').value.trim();
 
+  // Validate required fields
   if (!name || !phone) {
     shakeBtn();
+    // Highlight empty fields
+    if (!name)  document.getElementById('name').style.borderColor  = '#ff4757';
+    if (!phone) document.getElementById('phone').style.borderColor = '#ff4757';
     return;
   }
 
-  // Simulate submission
-  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+  // Reset border colors
+  document.getElementById('name').style.borderColor  = '';
+  document.getElementById('phone').style.borderColor = '';
+
+  // Build WhatsApp message
+  let waMsg = `Hello! I'd like to book an AC service.\n\n`;
+  waMsg += `👤 Name: ${name}\n`;
+  waMsg += `📞 Phone: ${phone}\n`;
+  if (emirate)  waMsg += `📍 Location: ${emirate}\n`;
+  if (service)  waMsg += `🔧 Service: ${service}\n`;
+  if (message)  waMsg += `📝 Details: ${message}\n`;
+  waMsg += `\nPlease confirm my booking. Thank you!`;
+
+  // Show loading state
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
   submitBtn.disabled = true;
-  submitBtn.style.background = '#6c5ce7';
 
   setTimeout(() => {
-    submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> Booking Confirmed! We\'ll call you shortly.';
+    // Open WhatsApp with pre-filled message
+    const waURL = `https://wa.me/971567571868?text=${encodeURIComponent(waMsg)}`;
+    window.open(waURL, '_blank');
+
+    // Show success
+    submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> Sent! Opening WhatsApp...';
     submitBtn.style.background = '#00b894';
     submitBtn.style.boxShadow = '0 4px 16px rgba(0,184,148,0.4)';
 
+    // Reset after 4 seconds
     setTimeout(() => {
       contactForm.reset();
       submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Book AC Service Now';
@@ -165,7 +189,7 @@ contactForm?.addEventListener('submit', (e) => {
       submitBtn.style.background = '';
       submitBtn.style.boxShadow = '';
     }, 4000);
-  }, 1500);
+  }, 800);
 });
 
 function shakeBtn() {
