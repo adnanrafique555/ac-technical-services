@@ -1,275 +1,243 @@
 /* ================================================
-   A/C Technical Services UAE — script.js
+   AC Technical Services UAE — script.js
    ================================================ */
 'use strict';
 
 /* ===== SCROLL REVEAL ===== */
-const revealEls = document.querySelectorAll('.reveal');
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    // Stagger siblings for a wave effect
-    const siblings = Array.from(
-      entry.target.parentElement?.querySelectorAll('.reveal:not(.visible)') || []
-    );
-    const idx = siblings.indexOf(entry.target);
-    setTimeout(() => entry.target.classList.add('visible'), idx * 75);
-    revealObs.unobserve(entry.target);
+const revealAll = () => {
+  document.querySelectorAll('[data-reveal]').forEach(el => {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (!entry.isIntersecting) return;
+        // Stagger siblings
+        const siblings = Array.from(
+          entry.target.parentElement?.querySelectorAll('[data-reveal]:not(.visible)') || []
+        );
+        const delay = siblings.indexOf(entry.target) * 80;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    obs.observe(el);
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-revealEls.forEach(el => revealObs.observe(el));
+};
+revealAll();
 
 
-/* ===== HERO FADE-UP ===== */
-const fadeEls = document.querySelectorAll('.fade-up');
-fadeEls.forEach((el, i) => {
-  Object.assign(el.style, {
-    opacity: '0',
-    transform: 'translateY(22px)',
-    transition: `opacity .7s ease ${0.1 + i * 0.1}s, transform .7s ease ${0.1 + i * 0.1}s`
-  });
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    }, 80);
-  });
-});
-
-
-/* ===== NAVBAR SCROLL ===== */
-const navbar = document.getElementById('navbar');
-const siteHeader = document.getElementById('site-header');
+/* ===== STICKY NAV ===== */
+const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  header?.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
 
-/* ===== MOBILE NAVIGATION ===== */
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
-const navActions = document.querySelector('.nav-actions');
+/* ===== MOBILE MENU ===== */
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+const navCta = document.querySelector('.nav-cta');
+let menuOpen = false;
 
-navToggle?.addEventListener('click', (e) => {
+burger?.addEventListener('click', e => {
   e.stopPropagation();
-  const isOpen = navToggle.classList.toggle('open');
-  navMenu?.classList.toggle('open', isOpen);
-  navActions?.classList.toggle('open', isOpen);
+  menuOpen = !menuOpen;
+  burger.classList.toggle('open', menuOpen);
+  navLinks?.classList.toggle('open', menuOpen);
+  navCta?.classList.toggle('open', menuOpen);
 });
 
-// Close on link click
-document.querySelectorAll('#navMenu a').forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle?.classList.remove('open');
-    navMenu?.classList.remove('open');
-    navActions?.classList.remove('open');
+document.querySelectorAll('#navLinks a').forEach(a => {
+  a.addEventListener('click', () => {
+    menuOpen = false;
+    burger?.classList.remove('open');
+    navLinks?.classList.remove('open');
+    navCta?.classList.remove('open');
   });
 });
 
-// Close on outside click
-document.addEventListener('click', (e) => {
-  if (!siteHeader?.contains(e.target)) {
-    navToggle?.classList.remove('open');
-    navMenu?.classList.remove('open');
-    navActions?.classList.remove('open');
+document.addEventListener('click', e => {
+  if (!header?.contains(e.target) && menuOpen) {
+    menuOpen = false;
+    burger?.classList.remove('open');
+    navLinks?.classList.remove('open');
+    navCta?.classList.remove('open');
   }
 });
 
 
-/* ===== ACTIVE NAV ON SCROLL ===== */
+/* ===== ACTIVE NAV LINK ===== */
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('#navMenu a');
-const secObs = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(a => a.classList.remove('active'));
-      const active = document.querySelector(`#navMenu a[href="#${entry.target.id}"]`);
-      active?.classList.add('active');
+const links = document.querySelectorAll('#navLinks a');
+new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      document.querySelector(`#navLinks a[href="#${e.target.id}"]`)?.classList.add('active');
     }
   });
-}, { rootMargin: '-25% 0px -70% 0px' });
-sections.forEach(s => secObs.observe(s));
+}, { rootMargin: '-25% 0px -70% 0px' }).observe && sections.forEach(s => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        document.querySelector(`#navLinks a[href="#${e.target.id}"]`)?.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-25% 0px -70% 0px' }).observe(s);
+});
 
 
 /* ===== COUNTER ANIMATION ===== */
-const counters = document.querySelectorAll('.counter');
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !entry.target.dataset.done) {
-      entry.target.dataset.done = '1';
-      const target = +entry.target.dataset.target;
-      const duration = 1800;
-      const step = target / (duration / 16);
-      let current = 0;
+document.querySelectorAll('.counter').forEach(el => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting || e.target.dataset.done) return;
+      e.target.dataset.done = '1';
+      const target = +e.target.dataset.target;
+      let cur = 0;
+      const step = target / (1600 / 16);
       const tick = () => {
-        current = Math.min(current + step, target);
-        entry.target.textContent = Math.floor(current);
-        if (current < target) requestAnimationFrame(tick);
+        cur = Math.min(cur + step, target);
+        e.target.textContent = Math.floor(cur);
+        if (cur < target) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
-    }
-  });
-}, { threshold: 0.6 });
-counters.forEach(c => counterObs.observe(c));
+    });
+  }, { threshold: 0.6 }).observe(el);
+});
 
 
 /* ===== FAQ ACCORDION ===== */
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.closest('.faq-item');
-    const answer = item.querySelector('.faq-a');
-    const isOpen = item.classList.contains('open');
+    const ans = item?.querySelector('.faq-a');
+    const isOpen = item?.classList.contains('open');
 
-    // Close all open items
-    document.querySelectorAll('.faq-item.open').forEach(openItem => {
-      openItem.classList.remove('open');
-      openItem.querySelector('.faq-a').classList.remove('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a')?.classList.remove('open');
     });
 
-    // Open this one if it was closed
+    // Open clicked if was closed
     if (!isOpen) {
-      item.classList.add('open');
-      answer.classList.add('open');
+      item?.classList.add('open');
+      ans?.classList.add('open');
     }
   });
 });
 
 
-/* ===== SERVICE CARD ICON COLORS ===== */
-document.querySelectorAll('.svc-card[data-color]').forEach(card => {
-  const color = card.dataset.color;
-  const icon = card.querySelector('.svc-icon');
-  if (icon) {
-    // Apply light bg tint using the color
-    icon.style.cssText = `background:${color}18; color:${color}`;
-    card.addEventListener('mouseenter', () => {
-      icon.style.cssText = `background:${color}; color:#fff; transform:scale(1.1)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      icon.style.cssText = `background:${color}18; color:${color}; transform:scale(1)`;
-    });
-  }
-});
-
-
-/* ===== BOOKING FORM — SEND TO WHATSAPP ===== */
-const bookingForm = document.getElementById('bookingForm');
+/* ===== CONTACT FORM → WHATSAPP ===== */
+const form = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
 
-bookingForm?.addEventListener('submit', (e) => {
+form?.addEventListener('submit', e => {
   e.preventDefault();
 
-  const name    = document.getElementById('f-name').value.trim();
-  const phone   = document.getElementById('f-phone').value.trim();
-  const city    = document.getElementById('f-city').value;
-  const service = document.getElementById('f-service').value;
-  const msg     = document.getElementById('f-msg').value.trim();
+  const name    = document.getElementById('c-name')?.value.trim();
+  const phone   = document.getElementById('c-phone')?.value.trim();
+  const city    = document.getElementById('c-city')?.value;
+  const service = document.getElementById('c-service')?.value;
+  const msg     = document.getElementById('c-msg')?.value.trim();
 
   // Validate
-  if (!name) { highlight('f-name'); return; }
-  if (!phone) { highlight('f-phone'); return; }
+  if (!name) { flash('c-name'); return; }
+  if (!phone) { flash('c-phone'); return; }
 
-  // Reset highlights
-  ['f-name','f-phone'].forEach(id => {
-    document.getElementById(id).style.borderColor = '';
+  // Reset borders
+  ['c-name', 'c-phone'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.borderColor = '';
   });
 
-  // Build WhatsApp message
-  let waText = `Hello A/C Technical Services!\n\nI'd like to book a service:\n\n`;
-  waText += `👤 Name: ${name}\n`;
-  waText += `📞 Phone: ${phone}\n`;
-  if (city)    waText += `📍 City: ${city}\n`;
-  if (service) waText += `🔧 Service: ${service}\n`;
-  if (msg)     waText += `📝 Details: ${msg}\n`;
-  waText += `\nPlease confirm my booking. Thank you!`;
+  // Build message
+  let text = `Hello! I'd like to book a service with AC Technical Services.\n\n`;
+  text += `👤 Name: ${name}\n📞 Phone: ${phone}\n`;
+  if (city) text += `📍 City: ${city}\n`;
+  if (service) text += `🔧 Service: ${service}\n`;
+  if (msg) text += `📝 Details: ${msg}\n`;
+  text += `\nPlease confirm my booking. Thank you!`;
 
-  // Loading state
-  const originalHTML = submitBtn.innerHTML;
+  // Loading
+  const orig = submitBtn.innerHTML;
   submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Opening WhatsApp...</span>';
   submitBtn.disabled = true;
-  submitBtn.style.background = '#6c63ff';
 
   setTimeout(() => {
-    window.open(`https://wa.me/971567571868?text=${encodeURIComponent(waText)}`, '_blank');
+    window.open(`https://wa.me/971567571868?text=${encodeURIComponent(text)}`, '_blank');
 
-    // Success state
+    // Success
     submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> <span>Sent! We\'ll reply shortly.</span>';
-    submitBtn.style.background = '#00b894';
-    submitBtn.style.boxShadow = '0 6px 24px rgba(0,184,148,.4)';
+    submitBtn.style.background = '#059669';
 
-    // Reset
     setTimeout(() => {
-      bookingForm.reset();
-      submitBtn.innerHTML = originalHTML;
+      form.reset();
+      submitBtn.innerHTML = orig;
       submitBtn.disabled = false;
       submitBtn.style.background = '';
-      submitBtn.style.boxShadow = '';
     }, 4000);
-  }, 900);
+  }, 800);
 });
 
-function highlight(id) {
+function flash(id) {
   const el = document.getElementById(id);
-  el.style.borderColor = '#ff4757';
+  if (!el) return;
+  el.style.borderColor = '#ef4444';
   el.focus();
-  // Shake animation
-  el.style.animation = 'shake .4s ease';
-  el.addEventListener('animationend', () => el.style.animation = '', { once: true });
+  el.classList.add('shake');
+  el.addEventListener('animationend', () => el.classList.remove('shake'), { once: true });
 }
 
 
-/* ===== FLOATING BUTTONS — HIDE NEAR FOOTER ===== */
-const floatWrap = document.querySelector('.float-wrap');
-const footer = document.querySelector('.site-footer');
-if (floatWrap && footer) {
-  const footObs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      floatWrap.style.opacity = entry.isIntersecting ? '0' : '1';
-      floatWrap.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
-      floatWrap.style.transition = 'opacity .3s ease';
-    });
-  }, { threshold: 0.2 });
-  footObs.observe(footer);
-}
+/* ===== INJECT SHAKE CSS ===== */
+const s = document.createElement('style');
+s.textContent = `.shake{animation:shake .4s ease} @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}`;
+document.head.appendChild(s);
 
 
 /* ===== SMOOTH SCROLL ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = (navbar?.offsetHeight || 70) + 12;
-      window.scrollTo({
-        top: target.getBoundingClientRect().top + window.scrollY - offset,
-        behavior: 'smooth'
-      });
-    }
+    if (!target) return;
+    e.preventDefault();
+    const offset = (header?.offsetHeight || 68) + 8;
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + window.scrollY - offset,
+      behavior: 'smooth'
+    });
   });
 });
 
 
-/* ===== INJECT SHAKE KEYFRAME ===== */
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes shake {
-    0%,100%{transform:translateX(0)}
-    20%{transform:translateX(-7px)}
-    40%{transform:translateX(7px)}
-    60%{transform:translateX(-5px)}
-    80%{transform:translateX(5px)}
-  }
-`;
-document.head.appendChild(style);
-
-
-/* ===== SERVICES STRIP DUPLICATION (seamless loop) ===== */
-const strip = document.querySelector('.strip-inner');
-if (strip) {
-  strip.innerHTML += strip.innerHTML; // double for seamless scroll
+/* ===== HERO SERVICE BAR ANIMATION ===== */
+let activeIdx = 0;
+const hpsItems = document.querySelectorAll('.hps-item');
+if (hpsItems.length > 0) {
+  setInterval(() => {
+    hpsItems.forEach(i => i.classList.remove('active'));
+    activeIdx = (activeIdx + 1) % hpsItems.length;
+    hpsItems[activeIdx].classList.add('active');
+  }, 2500);
 }
 
 
-/* ===== LOG ===== */
-console.log('%cA/C Technical Services UAE', 'color:#0066ff;font-size:16px;font-weight:800;');
-console.log('%c+971 56 757 1868 | Dubai & All UAE', 'color:#475569;font-size:12px');
+/* ===== FLOATING WA HIDE NEAR FOOTER ===== */
+const floatWa = document.querySelector('.float-wa');
+const footer = document.querySelector('.footer');
+if (floatWa && footer) {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (floatWa) {
+        floatWa.style.opacity = e.isIntersecting ? '0' : '1';
+        floatWa.style.pointerEvents = e.isIntersecting ? 'none' : 'auto';
+        floatWa.style.transition = 'opacity .3s ease';
+      }
+    });
+  }, { threshold: 0.15 }).observe(footer);
+}
+
+
+console.log('%cAC Technical Services UAE', 'color:#0052CC;font-weight:800;font-size:16px');
+console.log('%c+971 56 757 1868 | Dubai & All UAE', 'color:#64748b;font-size:12px');
