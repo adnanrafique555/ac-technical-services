@@ -1843,17 +1843,6 @@
 
                     <div class="contact-item">
                         <div class="contact-item-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-item-content">
-                            <h3>Email</h3>
-                            <a href="/cdn-cgi/l/email-protection#b8d1d6ded7f8d9dbccdddbd0d6d1dbd9d4cbddcaced1dbddcb96d9dd"><span class="__cf_email__" data-cfemail="d4bdbab2bb94b5b7a0b1b7bcbabdb7b5b8a7b1a6a2bdb7b1a7fab5b1">[email&#160;protected]</span></a>
-                            <p>We'll respond within 24 hours</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
                         <div class="contact-item-content">
@@ -1864,7 +1853,7 @@
                 </div>
 
                 <div class="contact-form">
-                    <h3 style="margin-bottom: 1.5rem; color: var(--text-dark); font-size: 1.5rem;">Request a Service</h3>
+                    <h3 style="margin-bottom: 1.5rem; color: var(--text-dark); font-size: 1.5rem;">Quick WhatsApp Booking</h3>
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -1883,8 +1872,8 @@
                             <textarea id="message" name="message" required placeholder="Describe your issue or requirements"></textarea>
                         </div>
                         <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
+                            <i class="fab fa-whatsapp"></i>
+                            Send via WhatsApp
                         </button>
                     </form>
                 </div>
@@ -1932,7 +1921,6 @@
                 <h4>Contact</h4>
                 <ul>
                     <li><a href="tel:+971567571868">+971 56 757 1868</a></li>
-                    <li><a href="/cdn-cgi/l/email-protection#8de4e3ebe2cdeceef9e8eee5e3e4eeece1fee8fffbe4eee8fea3ece8">Email Us</a></li>
                     <li><a href="https://wa.me/971567571868" target="_blank">WhatsApp Chat</a></li>
                     <li>Dubai, Sharjah, Ajman</li>
                     <li>Abu Dhabi, Al Ain</li>
@@ -1979,28 +1967,41 @@
             });
         });
 
-        // Contact Form Handling
+        // Contact Form - Send to WhatsApp
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                service: document.getElementById('service').value,
-                message: document.getElementById('message').value
-            };
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const service = document.getElementById('service').value.trim();
+            const message = document.getElementById('message').value.trim();
             
-            // Create WhatsApp message
-            const whatsappMessage = `New Service Request:%0A%0AName: ${formData.name}%0APhone: ${formData.phone}%0AService: ${formData.service}%0AMessage: ${formData.message}`;
+            // Validate required fields
+            if (!name || !phone) {
+                alert('Please fill in your name and phone number');
+                return;
+            }
             
-            // Redirect to WhatsApp
-            window.open(`https://wa.me/971567571868?text=${whatsappMessage}`, '_blank');
+            // Build formatted WhatsApp message
+            let whatsappText = '*New Service Request*%0A%0A';
+            whatsappText += `*Name:* ${encodeURIComponent(name)}%0A`;
+            whatsappText += `*Phone:* ${encodeURIComponent(phone)}%0A`;
+            if (service) {
+                whatsappText += `*Service:* ${encodeURIComponent(service)}%0A`;
+            }
+            if (message) {
+                whatsappText += `%0A*Message:*%0A${encodeURIComponent(message)}`;
+            }
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/971567571868?text=${whatsappText}`, '_blank');
             
             // Reset form
             this.reset();
             
             // Show success message
-            alert('Thank you! Your request has been sent. We will contact you shortly.');
+            alert('Opening WhatsApp... Please send the message to complete your booking!');
         });
 
         // Smooth scroll for navigation links
